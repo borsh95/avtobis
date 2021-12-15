@@ -1,0 +1,42 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~ VARIABLES ~~~~~~~~~~~~~~~~~~~~~~~~~*/
+$color-black: #000;
+
+$color-gray: #696969;
+$color-red-lig: #9a6263;
+$color-red: #d23235;
+$color-green: #82A78A;
+
+$color-primary: $color-gray;
+$color-secondary-lig: $color-red-lig;
+$color-secondary: $color-red;
+$color-text: $color-gray;
+$color-succes: $color-green;
+$color-link: $color-red;
+
+:root {
+	/*font-family*/
+	--fm-1: "Montserrat", sans-serif;
+
+	/*pallete*/
+	--color-red: #{$color-red};
+	--basic-black: #000;
+	--basick-white: #fff;
+	--color-primary: #{$color-primary};
+	--color-secondary-lig: #{$color-secondary-lig};
+	--color-secondary: #{$color-secondary};
+	--color-succes: #{$color-succes};
+	--color-link: #{$color-link};
+
+	--color-text: #{$color-gray};
+}
+
+//breakpoints
+$desctop: 1920;
+$desctop-mid: 1450;
+$desctop-min: 1230;
+$table: 1024;
+$mobile: 768;
+$tel: 480;
+
+/***********************Main*/
+$duration: 0.3s;

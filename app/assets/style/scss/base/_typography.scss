@@ -1,0 +1,83 @@
+/*==================== TYPOGRAPHY ====================*/
+.title {
+	&--2 {
+		font-size: 32px;
+
+		@include desctop-mid {
+			font-size: 28px;
+		}
+
+		@include table {
+			font-size: 24px;
+		}
+
+		@include tel {
+			font-size: 16px;
+		}
+	}
+
+	&--4 {
+		font-size: 18px;
+	}
+
+	&--side-line {
+		font-weight: 600;
+		text-transform: uppercase;
+		text-align: center;
+
+		span {
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				right: 105%;
+				top: 50%;
+				width: getEm(10, 32);
+				height: getPr(25, 39);
+				background-color: var(--color-secondary);
+				transform: translateY(-50%);
+			}
+		}
+	}
+
+	&--accent {
+		font-weight: 600;
+		text-transform: uppercase;
+		text-align: center;
+		text-decoration: underline;
+		color: var(--color-succes);
+	}
+}
+
+.text {
+	line-height: (20/16);
+
+	a {
+		color: var(--link-color);
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&--air {
+		p,
+		ul,
+		ol {
+			margin-top: getEm(28, 16);
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+
+	@include mobile {
+		font-size: 14px;
+	}
+
+	@include tel {
+		font-size: 12px;
+	}
+}

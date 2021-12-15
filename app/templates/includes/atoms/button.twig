@@ -1,0 +1,37 @@
+{# -------- defining attributes -------- #}
+
+{% if attrs.href %}
+{% set tag = 'a' %}
+{% else %}
+{% set tag = 'button' %}
+{% endif %}
+
+{# -------- defining classes -------- #}
+
+{% set baseClass = ' btn ' %}
+
+{% if parent %}
+{% set mix = parent|trim ~ '__' ~ baseClass|trim %}
+{% endif %}
+
+{% if mods is defined and mods|length != 0 %}
+{% set modifications = "" %}
+{% for mod in mods %}
+{% set modifications = modifications ~ baseClass|trim ~ "--" ~ mod ~ " " %}
+{% endfor %}
+{% endif %}
+
+{% set classes = mix|default('') ~ baseClass ~ modifications|default('') %}
+
+{# -------- defining attributes -------- #}
+
+{% set attributes = '' %}
+{% for attr, val in attrs %}
+{% set attributes = attributes ~ ' ' ~ attr ~ '="' ~ val ~ '"' %}
+{% endfor %}
+
+<{{ tag }} class="{{ classes|trim }}" {{ attributes }}>
+	{% if count.pos is defined and count.pos == 'before' %}{{count.val}}{%endif%}
+	{{ text|default('Кнопка')|trim }}
+	{% if count.pos is defined and count.pos == 'after' %}{{count.val}}{%endif%}
+</{{ tag }}>

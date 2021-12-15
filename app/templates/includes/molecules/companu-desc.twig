@@ -1,0 +1,31 @@
+<!-- company desc block -->
+{% set baseClass = class.base|default('company-desc-b') %}
+{% set resultClass = createBemClass(baseClass, _context.class) %}
+<div class="{{ resultClass }}">
+	{% block title %}{% endblock %}
+	<div class="{{ baseClass }}__row vt-center">
+		<!-- text box -->
+		<div class="{{ baseClass }}__text-box text text--air">
+			{% block textBox %}
+			<p>
+				Важными преимуществами деятельности ООО «Автобис» является комплексный подход в удовлетворении нужд
+				СТО и автосервисов. Мы работаем исключительно с проверенными и авторитетными производителями
+				гаражного оборудования и предлагаем нашим клиентам и партнерам высококачественные товары по
+				приемлемой цене. Мы сотрудничаем с известными компаниями, которые давно зарекомендовали себя на
+				рынке оборудования для СТО, такими как Bosch AG, Alfred Karcher GmbH &Co. KG, Hofmann Megaplan GmbH
+				и многими другими.
+			</p>
+			{% endblock %}
+		</div>
+		<!-- img box -->
+		<div class="{{ baseClass }}__img-box">
+			{% block imgBox %}
+			<div class="{{ baseClass }}__img">
+				{% block img %}
+				<img src="assets/img/test/about-us.jpg" alt="">
+				{% endblock %}
+			</div>
+			{% endblock %}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="ArtBro">
+	<title>Главная</title>
+	<link rel="stylesheet" href="./assets/style/css/libs/swiper-bundle.min.css">
+	<link rel="stylesheet" href="./assets/style/css/style.css">
+
+</head>
+
+<body class="page index-pg">
+	<div class="global-wrap">
+		{# ------ HEADER ----- #}
+		{% block header %}{% endblock %}
+
+		{# ------ BREADCRUMBS ----- #}
+		{% block breadcrumbs %}{% endblock %}
+
+		<!-- CONTENT WRAP -->
+		<div class="content-wrap">
+			{% block content %}
+			{% endblock %}
+		</div>
+		<a class="escort-btn btn btn--dott btn--accent">
+			<span>Спецпредложения</span>
+		</a>
+		{# ------ FOOTTER ----- #}
+		{% block footer %}{% endblock %}
+
+		{# ------ COMMON ----- #}
+		{% block common %}
+
+		{% endblock %}
+	</div>
+	{# ------ SCRIPTS ----- #}
+	{% block scripts %}
+	<script src="assets/js/main.js"></script>
+	{% endblock %}
+</body>
+
+</html>

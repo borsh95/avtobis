@@ -1,0 +1,22 @@
+<!-- productions -->
+{% set baseClass = 'partners-b' %}
+
+<section class="{{ baseClass }} section">
+	<div class="{{ baseClass }}__container container">
+		{% block title %}
+		<h2 class="{{ baseClass }}__title title title--2 title--side-line section__title">
+			<span>Партнеры</span>
+		</h2>
+
+		<div class="section__subtitle text">
+			{% block subtitle %}
+			<p style="margin: 0 auto; max-width: 800px;">
+				Компания «Автобис» - официальный торговый и сервисный представитель
+				следующих производителей, выпускающих гаражное оборудование:
+			</p>
+			{% endblock %}
+		</div>
+		{% endblock %}
+		{% include "./../molecules/miniatures-slider.twig" %}
+	</div>
+</section>

@@ -1,0 +1,471 @@
+{% extends "includes/layouts/page.twig" %}
+
+{# ------ HEADER ----- #}
+{% block header %}
+{% include "./includes/organisms/_header.twig" %}
+{% endblock %}
+{# ------ END HEADER ----- #}
+
+{# ------ CONTENT ----- #}
+{% block content %}
+{% include "./includes/molecules/sp-title.twig" %}
+<div class="container">
+	{# ------ panel block ----- #}
+	{% embed "./includes/organisms/panel.twig" %}
+	{% block sidebar %}
+	<!-- catalog nav -->
+	<div class="catalog-nav" data-tree-menu-single="true">
+		<div class="catalog-nav__title">
+			<span>Категории</span>
+			<span class="catalog-nav__arr js-tree-menu__btn">
+				<svg>
+					<use xlink:href="./assets/img/icons/ui/sprite.svg#arr-down_tr">
+					</use>
+				</svg>
+			</span>
+		</div>
+		<ul class="js-tree-menu">
+			<li class="active">
+				<div class="catalog-nav__head">
+					<span>
+						<span>Спецпредложения</span>
+					</span>
+				</div>
+			</li>
+			<li>
+				<div class="catalog-nav__head">
+					<a href="#">
+						<span>Оборудование для мойки деталей, моечные машины</span>
+					</a>
+					<span class="catalog-nav__arr js-tree-menu__btn">
+						<svg>
+							<use xlink:href="./assets/img/icons/ui/sprite.svg#arr-down_tr">
+							</use>
+						</svg>
+					</span>
+				</div>
+				<ul>
+					<li>
+						<a href="#">Машины для мойки ящиков и тары</a>
+						<a href="#">Автоматические мойки агрегатов</a>
+						<a href="#">Промышленные мойки портального типа</a>
+						<a href="#">Погружные моечные машины</a>
+						<a href="#">Ультразвуковые ванны (мойки)</a>
+						<a href="#">Шнековые моечные машины</a>
+						<a href="#">Ручные мойки деталей</a>
+						<a href="#">Тоннельные моечные машины проходного типа</a>
+						<a href="#">Стенды очистки деталей</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div class="catalog-nav__head">
+					<a href="#">
+						<span>Оборудование для механической очистки деталей</span>
+					</a>
+					<span class="catalog-nav__arr js-tree-menu__btn">
+						<svg>
+							<use xlink:href="./assets/img/icons/ui/sprite.svg#arr-down_tr">
+							</use>
+						</svg>
+					</span>
+				</div>
+				<ul>
+					<li>
+						<a href="#">Машины для мойки ящиков и тары</a>
+						<a href="#">Автоматические мойки агрегатов</a>
+						<a href="#">Промышленные мойки портального типа</a>
+						<a href="#">Погружные моечные машины</a>
+						<a href="#">Ультразвуковые ванны (мойки)</a>
+						<a href="#">Шнековые моечные машины</a>
+						<a href="#">Ручные мойки деталей</a>
+						<a href="#">Тоннельные моечные машины проходного типа</a>
+						<a href="#">Стенды очистки деталей</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div class="catalog-nav__head">
+					<a href="#">
+						<span>Оборудование для ремонта двигателей внутреннего сгорания (ДВС)</span>
+					</a>
+					<span class="catalog-nav__arr js-tree-menu__btn">
+						<svg>
+							<use xlink:href="./assets/img/icons/ui/sprite.svg#arr-down_tr">
+							</use>
+						</svg>
+					</span>
+				</div>
+				<ul>
+					<li>
+						<a href="#">Машины для мойки ящиков и тары</a>
+						<a href="#">Автоматические мойки агрегатов</a>
+						<a href="#">Промышленные мойки портального типа</a>
+						<a href="#">Погружные моечные машины</a>
+						<a href="#">Ультразвуковые ванны (мойки)</a>
+						<a href="#">Шнековые моечные машины</a>
+						<a href="#">Ручные мойки деталей</a>
+						<a href="#">Тоннельные моечные машины проходного типа</a>
+						<a href="#">Стенды очистки деталей</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div class="catalog-nav__head">
+					<a href="#">
+						<span>Оборудование для испытания и ремонта дизельной топливной аппаратуры</span>
+					</a>
+					<span class="catalog-nav__arr js-tree-menu__btn">
+						<svg>
+							<use xlink:href="./assets/img/icons/ui/sprite.svg#arr-down_tr">
+							</use>
+						</svg>
+					</span>
+				</div>
+				<ul>
+					<li>
+						<a href="#">Машины для мойки ящиков и тары</a>
+						<a href="#">Автоматические мойки агрегатов</a>
+						<a href="#">Промышленные мойки портального типа</a>
+						<a href="#">Погружные моечные машины</a>
+						<a href="#">Ультразвуковые ванны (мойки)</a>
+						<a href="#">Шнековые моечные машины</a>
+						<a href="#">Ручные мойки деталей</a>
+						<a href="#">Тоннельные моечные машины проходного типа</a>
+						<a href="#">Стенды очистки деталей</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	{% endblock %}
+	{% block content %}
+	<div class="products-b">
+		<div class="filter-prod">
+			<div class="filter-prod__list">
+				<button class="filter-prod__item active" type="button">
+					Машины для мойки ящиков и тары
+				</button>
+				<button class="filter-prod__item" type="button">
+					Автоматические мойки агрегатов
+				</button>
+				<button class="filter-prod__item" type="button">
+					Промышленные мойки портального типа
+				</button>
+				<button class="filter-prod__item" type="button">
+					Погружные моечные машины
+				</button>
+				<button class="filter-prod__item" type="button">
+					Ультразвуковые ванны (мойки)
+				</button>
+				<button class="filter-prod__item" type="button">
+					Шнековые моечные машины
+				</button>
+				<button class="filter-prod__item" type="button">
+					Ручные мойки деталей
+				</button>
+				<button class="filter-prod__item" type="button">
+					Тоннельные моечные машины проходного типа
+				</button>
+				<button class="filter-prod__item" type="button">
+					Стенды очистки деталей
+				</button>
+			</div>
+		</div>
+		<div class="h3 title title-4">Все товары из данной категории:</div>
+		<div class="sorting">
+			<div class="sorting__links">
+				<span class="sorting__title">
+					Сортировать:
+				</span>
+				<span class="active">Название</span>
+				<a href="#">Цена</a>
+			</div>
+		</div>
+		<div class="products-b__list-wrap">
+			<div class="products-b__list">
+				<!-- product card -->
+				<div class="products-b__product product-card">
+					<a href="#" class="product-card__img">
+						<img src="assets/img/test/prod.jpg" alt="Какой-то текст">
+					</a>
+					<div class="product-card__textBox">
+						<div class="product-card__title">Моечная машина АМ100 Т</div>
+						<div class="product-card__availability availability-label availability-label--yes">
+							В наличии
+						</div>
+						<div class="product-card__prop">
+							<div class="product-card__prop-item">
+								<b>Производитель:</b>
+								<p>Моторные технологии</p>
+							</div>
+							<div class="product-card__prop-item">
+								<b>Габариты загрузочного окна ШхВ, мм:</b>
+								<p>1000x500</p>
+							</div>
+							<div class="product-card__prop-item">
+								<b>Грузоподъемность на 1 м², кг:</b>
+								<p>100</p>
+							</div>
+							<div class="product-card__prop-item">
+								<b>Длина загрузки/выгрузки, мм:</b>
+								<p>500</p>
+							</div>
+						</div>
+						<div class="product-card__price">
+							<div class="product-card__price-inner">
+								<span class="product-card__price-val">
+									Цена: <b>1000 BYN</b>
+								</span>
+							</div>
+
+						</div>
+						<div class="product-card__controls">
+							<button class="product-card__btn-buy  btn btn--border btn--color_secondary">
+								<svg>
+									<use xlink:href="assets/img/icons/ui/sprite.svg#shopping-cart"></use>
+								</svg>
+								<span>Добавить в корзину</span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<!-- product card -->
+				<div class="products-b__product product-card">
+					<a href="#" class="product-card__img">
+						<img src="assets/img/test/prod.jpg" alt="Какой-то текст">
+					</a>
+					<div class="product-card__textBox">
+						<div class="product-card__title">Моечная машина АМ100 Т</div>
+						<div class="product-card__availability availability-label availability-label--no">
+							Нет в наличии
+						</div>
+						<div class="product-card__prop">
+							<div class="product-card__prop-item">
+								<b>Производитель:</b>
+								<p>Моторные технологии</p>
+							</div>
+							<div class="product-card__prop-item">
+								<b>Габариты загрузочного окна ШхВ, мм:</b>
+								<p>1000x500</p>
+							</div>
+							<div class="product-card__prop-item">
+								<b>Грузоподъемность на 1 м², кг:</b>
+								<p>100</p>
+							</div>
+							<div class="product-card__prop-item">
+								<b>Длина загрузки/выгрузки, мм:</b>
+								<p>500</p>
+							</div>
+						</div>
+						<div class="product-card__price">
+							<div class="product-card__price-inner">
+								<span class="product-card__price-val">
+									Цена: <b>по запросу</b>
+								</span>
+							</div>
+
+						</div>
+						<div class="product-card__controls">
+							<button class="product-card__btn-buy  btn btn--border btn--color_secondary">
+								<span>Уточнить цену</span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<!-- product card -->
+				<div class="products-b__product product-card">
+					<a href="#" class="product-card__img">
+						<img src="assets/img/test/prod.jpg" alt="Какой-то текст">
+					</a>
+					<div class="product-card__textBox">
+						<div class="product-card__title">Моечная машина АМ100 Т</div>
+						<div class="product-card__availability availability-label availability-label--yes">
+							В наличии
+						</div>
+						<div class="product-card__prop">
+							<div class="product-card__prop-item">
+								<b>Производитель:</b>
+								<p>Моторные технологии</p>
+							</div>
+							<div class="product-card__prop-item">
+								<b>Габариты загрузочного окна ШхВ, мм:</b>
+								<p>1000x500</p>
+							</div>
+							<div class="product-card__prop-item">
+								<b>Грузоподъемность на 1 м², кг:</b>
+								<p>100</p>
+							</div>
+							<div class="product-card__prop-item">
+								<b>Длина загрузки/выгрузки, мм:</b>
+								<p>500</p>
+							</div>
+						</div>
+						<div class="product-card__price">
+							<div class="product-card__price-inner">
+								<span class="product-card__price-val">
+									Цена: <b>1000 BYN</b>
+								</span>
+							</div>
+
+						</div>
+						<div class="product-card__controls">
+							<button class="product-card__btn-buy  btn btn--border btn--color_secondary">
+								<svg>
+									<use xlink:href="assets/img/icons/ui/sprite.svg#shopping-cart"></use>
+								</svg>
+								<span>Добавить в корзину</span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<!-- product card -->
+				<div class="products-b__product product-card">
+					<a href="#" class="product-card__img">
+						<img src="assets/img/test/prod.jpg" alt="Какой-то текст">
+					</a>
+					<div class="product-card__textBox">
+						<div class="product-card__title">Моечная машина АМ100 Т</div>
+						<div class="product-card__availability availability-label availability-label--no">
+							Нет в наличии
+						</div>
+						<div class="product-card__prop">
+							<div class="product-card__prop-item">
+								<b>Производитель:</b>
+								<p>Моторные технологии</p>
+							</div>
+							<div class="product-card__prop-item">
+								<b>Габариты загрузочного окна ШхВ, мм:</b>
+								<p>1000x500</p>
+							</div>
+							<div class="product-card__prop-item">
+								<b>Грузоподъемность на 1 м², кг:</b>
+								<p>100</p>
+							</div>
+							<div class="product-card__prop-item">
+								<b>Длина загрузки/выгрузки, мм:</b>
+								<p>500</p>
+							</div>
+						</div>
+						<div class="product-card__price">
+							<div class="product-card__price-inner">
+								<span class="product-card__price-val">
+									Цена: <b>по запросу</b>
+								</span>
+							</div>
+
+						</div>
+						<div class="product-card__controls">
+							<button class="product-card__btn-buy  btn btn--border btn--color_secondary">
+								<span>Уточнить цену</span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<!-- product card -->
+				<div class="products-b__product product-card">
+					<a href="#" class="product-card__img">
+						<img src="assets/img/test/prod.jpg" alt="Какой-то текст">
+					</a>
+					<div class="product-card__textBox">
+						<div class="product-card__title">Моечная машина АМ100 Т</div>
+						<div class="product-card__availability availability-label availability-label--yes">
+							В наличии
+						</div>
+						<div class="product-card__prop">
+							<div class="product-card__prop-item">
+								<b>Производитель:</b>
+								<p>Моторные технологии</p>
+							</div>
+							<div class="product-card__prop-item">
+								<b>Габариты загрузочного окна ШхВ, мм:</b>
+								<p>1000x500</p>
+							</div>
+							<div class="product-card__prop-item">
+								<b>Грузоподъемность на 1 м², кг:</b>
+								<p>100</p>
+							</div>
+							<div class="product-card__prop-item">
+								<b>Длина загрузки/выгрузки, мм:</b>
+								<p>500</p>
+							</div>
+						</div>
+						<div class="product-card__price">
+							<div class="product-card__price-inner">
+								<span class="product-card__price-val">
+									Цена: <b>1000 BYN</b>
+								</span>
+							</div>
+
+						</div>
+						<div class="product-card__controls">
+							<button class="product-card__btn-buy  btn btn--border btn--color_secondary">
+								<svg>
+									<use xlink:href="assets/img/icons/ui/sprite.svg#shopping-cart"></use>
+								</svg>
+								<span>Добавить в корзину</span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<!-- product card -->
+				<div class="products-b__product product-card">
+					<a href="#" class="product-card__img">
+						<img src="assets/img/test/prod.jpg" alt="Какой-то текст">
+					</a>
+					<div class="product-card__textBox">
+						<div class="product-card__title">Моечная машина АМ100 Т</div>
+						<div class="product-card__availability availability-label availability-label--no">
+							Нет в наличии
+						</div>
+						<div class="product-card__prop">
+							<div class="product-card__prop-item">
+								<b>Производитель:</b>
+								<p>Моторные технологии</p>
+							</div>
+							<div class="product-card__prop-item">
+								<b>Габариты загрузочного окна ШхВ, мм:</b>
+								<p>1000x500</p>
+							</div>
+							<div class="product-card__prop-item">
+								<b>Грузоподъемность на 1 м², кг:</b>
+								<p>100</p>
+							</div>
+							<div class="product-card__prop-item">
+								<b>Длина загрузки/выгрузки, мм:</b>
+								<p>500</p>
+							</div>
+						</div>
+						<div class="product-card__price">
+							<div class="product-card__price-inner">
+								<span class="product-card__price-val">
+									Цена: <b>по запросу</b>
+								</span>
+							</div>
+
+						</div>
+						<div class="product-card__controls">
+							<button class="product-card__btn-buy  btn btn--border btn--color_secondary">
+								<span>Уточнить цену</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% include "./includes/molecules/pagination.twig" %}
+
+		</div>
+	</div>
+	{% endblock %}
+	{% endembed %}
+</div>
+
+
+{% endblock %}
+{# ------ END CONTENT ----- #}
+
+{# ------ FOOTER ----- #}
+{% block footer %}
+{% include "./includes/organisms/_footer.twig" %}
+{% endblock %}
+{# ------ END FOOTER ----- #}

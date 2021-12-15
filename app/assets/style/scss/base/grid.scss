@@ -1,0 +1,209 @@
+:root {
+	--column: 12;
+	--air-l: 30px;
+	--air-b: 20px;
+}
+
+@mixin from($min_width) {
+	@media screen and (min-width: #{$min_width}px) {
+		@content;
+	}
+}
+
+@mixin to($max_width) {
+	@media screen and (max-width: #{$max_width}px) {
+		@content;
+	}
+}
+
+@mixin row-flex {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 0 calc(var(--air-b) * -1) calc(var(--air-l) * -1);
+}
+
+@mixin col {
+	margin: 0 0 var(--air-b) var(--air-l);
+	word-wrap: break-word;
+}
+
+@mixin size($n) {
+	width: calc(100% / var(--column) * #{$n} - var(--air-l));
+}
+
+.row {
+	@include row-flex();
+}
+
+.col {
+	@include col();
+}
+
+@for $i from 1 through 12 {
+	.col-#{$i} {
+		width: calc(100% / 12 * #{$i} - var(--air-l));
+	}
+}
+
+@include desctop-min {
+	@for $i from 1 through 12 {
+		.col-lg-#{$i} {
+			width: calc(100% / 12 * #{$i} - var(--air-l));
+		}
+	}
+}
+
+@include table {
+	@for $i from 1 through 12 {
+		.col-md-#{$i} {
+			width: calc(100% / 12 * #{$i} - var(--air-l));
+		}
+	}
+}
+
+@include mobile {
+	@for $i from 1 through 12 {
+		.col-sm-#{$i} {
+			width: calc(100% / 12 * #{$i} - var(--air-l));
+		}
+	}
+}
+
+@include tel {
+	@for $i from 1 through 12 {
+		.col-xs-#{$i} {
+			width: calc(100% / 12 * #{$i} - var(--air-l));
+		}
+	}
+}
+
+.content-wrap {
+	padding: 4rem 0 6rem;
+	flex: 1;
+
+	h1 {
+		margin-bottom: 65px;
+	}
+
+	.bread-crumb + & {
+		padding-top: 20px;
+	}
+
+	@include desctop-min {
+		padding: 3.5rem 0 7rem;
+
+		h1 {
+			margin-bottom: 50px;
+		}
+	}
+
+	@include table {
+		padding: 2.5rem 0 5rem;
+
+		.bread-crumb + & {
+			padding-top: 15px;
+		}
+	}
+
+	@include mobile {
+		.bread-crumb + & {
+			padding-top: 0;
+		}
+
+		h1 {
+			margin-bottom: 35px;
+		}
+	}
+}
+
+/*section*/
+.section {
+	--ext-margin: 80px 0 20px;
+	$this: &;
+	padding: var(--ext-margin);
+
+	&__title {
+		margin-bottom: 60px;
+	}
+
+	&__subtitle {
+		margin: -#{getEm(33, 32)} 0 getEm(50, 32);
+		text-align: center;
+	}
+
+	&__btn {
+		--h: #{getEm(45, 12)};
+		--fz: 12px;
+		margin: 68px auto 0;
+		padding-left: getEm(18, 12);
+		padding-right: getEm(18, 12);
+		min-width: getEm(262, 12);
+	}
+
+	&#{&}--internal {
+		margin: var(--ext-margin);
+		padding: 70px 0 50px;
+	}
+
+	@include desctop-mid {
+		&__btn {
+			margin: 55px auto 0;
+		}
+
+		&#{&}--internal {
+			padding: 50px 0 50px;
+		}
+	}
+
+	@include desctop-min {
+		--ext-margin: 60px 0 20px;
+
+		&__title {
+			margin-bottom: 45px;
+		}
+
+		&__btn {
+			--h: 40px;
+		}
+	}
+
+	@include table {
+		--ext-margin: 40px 0 20px;
+
+		&#{&}--internal {
+			padding: 50px 0 50px;
+		}
+	}
+
+	@include mobile {
+		&__title {
+			margin-bottom: 28px;
+		}
+
+		&__btn {
+			--fz: 10px;
+			--h: 35px;
+			margin: 40px auto 0;
+		}
+	}
+
+	@include tel {
+		&#{&}--internal {
+			padding: 27px 0 70px;
+		}
+	}
+}
+
+.col-count-2 {
+	column-count: 2;
+
+	& > * {
+		break-inside: avoid-column;
+	}
+}
+
+.col-count-sm-1 {
+	@include mobile {
+		column-count: 1;
+	}
+}

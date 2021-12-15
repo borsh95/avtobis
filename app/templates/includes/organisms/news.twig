@@ -1,0 +1,92 @@
+<!-- productions -->
+{% set baseClass = class.base|default('news-b') %}
+{% set resultClass = createBemClass(baseClass, class) %}
+
+<section class="{{ resultClass }}">
+	<div class="{{ baseClass }}__container container">
+		{% block title %}
+		<h2 class="{{ baseClass }}__title title title--2 title--side-line section__title">
+			<span>НАШИ НОВОСТИ</span>
+		</h2>
+		{% endblock %}
+		<div class="{{ baseClass }}__list-wrap">
+			<div class="{{ baseClass }}__list">
+				<!-- news note -->
+				<a class="{{ baseClass }}__note news-note" href="#">
+					<div class="news-note__imgBox">
+						<div class="news-note__img">
+							<img src="./../../../assets/img/test/blog-note-prev.png" alt="">
+						</div>
+					</div>
+					<div class="news-note__textBox">
+						<div class="news-note__title">
+							ООО «АВТОБИС»: ПРИЯТНЫЕ СКИДКИ НА ВЫСТАВОЧНУЮ ТЕХНИКУ</div>
+						<div class="news-note__text">
+							<p>
+								Спешим вам сообщить, что наша компания предоставляет значительные скидки на выставочную
+								технику.
+							</p>
+						</div>
+					</div>
+				</a>
+				<!-- news note -->
+				<a class="{{ baseClass }}__note news-note" href="#">
+					<div class="news-note__imgBox">
+						<div class="news-note__img">
+							<img src="./../../../assets/img/test/blog-note-prev.png" alt="">
+						</div>
+					</div>
+					<div class="news-note__textBox">
+						<div class="news-note__title">
+							ООО «АВТОБИС»: ПРИЯТНЫЕ СКИДКИ НА ВЫСТАВОЧНУЮ ТЕХНИКУ</div>
+						<div class="news-note__text">
+							<p>
+								Спешим вам сообщить, что наша компания предоставляет значительные скидки на выставочную
+								технику.
+							</p>
+						</div>
+					</div>
+				</a>
+				<!-- news note -->
+				<a class="{{ baseClass }}__note news-note" href="#">
+					<div class="news-note__imgBox">
+						<div class="news-note__img">
+							<img src="./../../../assets/img/test/blog-note-prev.png" alt="">
+						</div>
+					</div>
+					<div class="news-note__textBox">
+						<div class="news-note__title">
+							ООО «АВТОБИС»: ПРИЯТНЫЕ СКИДКИ НА ВЫСТАВОЧНУЮ ТЕХНИКУ</div>
+						<div class="news-note__text">
+							<p>
+								Спешим вам сообщить, что наша компания предоставляет значительные скидки на выставочную
+								технику.
+							</p>
+						</div>
+					</div>
+				</a>
+				<!-- news note -->
+				<a class="{{ baseClass }}__note news-note" href="#">
+					<div class="news-note__imgBox">
+						<div class="news-note__img">
+							<img src="./../../../assets/img/test/blog-note-prev.png" alt="">
+						</div>
+					</div>
+					<div class="news-note__textBox">
+						<div class="news-note__title">
+							ООО «АВТОБИС»: ПРИЯТНЫЕ СКИДКИ НА ВЫСТАВОЧНУЮ ТЕХНИКУ</div>
+						<div class="news-note__text">
+							<p>
+								Спешим вам сообщить, что наша компания предоставляет значительные скидки на выставочную
+								технику.
+							</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			<a class="{{ baseClass }}__more section__btn btn btn--dott" href="#">
+				<span>Все новости компании</span>
+			</a>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,23 @@
+.hv-card {
+	transition: all $duration;
+
+	&--scale {
+		transition: all 0.3s, z-index 0s 0.3s;
+
+		&:hover {
+			z-index: 3;
+			transform: scale(1.08);
+			transition: all $duration, z-index 0s;
+
+			& ~ * {
+				z-index: 1;
+				transition: all $duration, z-index 0s;
+			}
+
+			& + * {
+				z-index: 2;
+				transition: all $duration, z-index 0s;
+			}
+		}
+	}
+}

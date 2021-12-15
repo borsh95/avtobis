@@ -1,0 +1,62 @@
+<!-- productions -->
+{% set baseClass = 'advantages-b' %}
+
+<section class="{{ baseClass }} section">
+	<div class="{{ baseClass }}__container container">
+		{% block title %}
+		<h2 class="{{ baseClass }}__title title title--2 title--side-line section__title">
+			<span>Наши преимущества</span>
+		</h2>
+		{% endblock %}
+		<!-- slider wrapper -->
+		<div class="cards-slider-wrap slider-wrap">
+			<!-- slider -->
+			<div class="cards-slider swiper">
+				<div class="swiper-wrapper">
+					<!-- card -->
+					<div class="cards-slider__slide info-card hv-card--scale swiper-slide">
+						<div class="info-card__img">
+							<img src="assets/img/components/advantages-b/delivery.jpg" alt="">
+						</div>
+						<div class="info-card__title">
+							Бесплатная доставка
+						</div>
+						<div class="info-card__text">
+							<p>
+								по Минску, Жлобину, Мозырю, Бресту, Гродно, Березе, Гомелю или при заказе от 5000 BYN
+							</p>
+						</div>
+					</div>
+					<!-- card -->
+					<div class="cards-slider__slide info-card hv-card--scale swiper-slide">
+						<div class="info-card__img">
+							<img src="assets/img/components/advantages-b/remont.jpg" alt="">
+						</div>
+						<div class="info-card__title">
+							Монтаж оборудования
+						</div>
+						<div class="info-card__text">
+							<p>
+								осуществляем монтажные, пусконаладочные и ремонтные работы любой сложности
+							</p>
+						</div>
+					</div>
+					<!-- card -->
+					<div class="cards-slider__slide info-card hv-card--scale swiper-slide">
+						<div class="info-card__img">
+							<img src="assets/img/components/advantages-b/garantiya.jpg" alt="">
+						</div>
+						<div class="info-card__title">
+							Гарантия от 12 месяцев
+						</div>
+						<div class="info-card__text">
+							<p>
+								осуществляем гарантийное и послегарантийное обслуживание продаваемого оборудования
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

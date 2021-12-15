@@ -1,0 +1,240 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~ COMMON BUTTON ~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.baseBtn {
+	cursor: pointer;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0em 18px;
+	text-align: center;
+}
+
+.btnForm {
+	--h: 40px;
+	--fz: 12px;
+	@extend .baseBtn;
+	position: relative;
+	min-height: var(--h);
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: var(--fz);
+	overflow: hidden;
+	transition: all $duration;
+}
+
+.btn {
+	@extend .baseBtn;
+	@extend .btnForm;
+	--color-bg: var(--color-primary);
+	--color: #fff;
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	color: var(--color);
+	white-space: nowrap;
+	background-color: var(--color-bg);
+	overflow: hidden;
+	border-radius: 40px;
+
+	svg {
+		margin-right: getEm(8, 14);
+		width: getEm(30, 14);
+		height: getEm(30, 14);
+		fill: #fff;
+		transition: fill $duration;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&--dott {
+		&:hover {
+			span {
+				margin-top: calc(var(--height) * -1);
+				height: calc(var(--height) * 2);
+				text-shadow: 0 var(--height) 0 #fff, 1px var(--height) 20px #fff;
+			}
+		}
+
+		span {
+			--height: calc(var(--h) - 3.8px);
+			height: var(--h);
+			display: inline-block;
+			height: var(--height);
+			line-height: var(--h);
+			text-shadow: 0 calc(var(--height) * 2) 0 #fff, 1px 76px 10px #000;
+			overflow: hidden;
+			transition: all $duration;
+		}
+	}
+
+	&--border {
+		color: var(--color-bg);
+		background-color: transparent;
+		border: 1px solid var(--color-bg);
+
+		svg {
+			fill: var(--color-bg);
+		}
+
+		&:hover {
+			color: #fff;
+			background-color: var(--color-bg);
+
+			svg {
+				fill: #fff;
+			}
+		}
+	}
+
+	&:hover {
+		--color-bg: var(--color-secondary);
+	}
+
+	&--color_secondary {
+		--color: #fff;
+		--color-bg: var(--color-secondary);
+	}
+
+	&--accent {
+		--color-bg: var(--color-succes);
+		box-shadow: 0px 0px 40px var(--color-succes);
+
+		&:hover {
+			--color-bg: var(--color-secondary);
+			box-shadow: 0px 0px 40px var(--color-secondary);
+		}
+	}
+}
+
+.btn-link {
+	@extend .baseBtn;
+	position: relative;
+	padding: 0;
+
+	&:hover {
+		&::before {
+			transform-origin: left;
+			transform: scaleX(1);
+		}
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: calc(100% + 1px);
+		right: 0;
+		left: 0;
+		height: getEm(1, 12);
+		background-color: var(--color-secondary);
+		transform: scaleX(0);
+		transform-origin: right;
+		transition: transform $duration cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+
+}
+
+.btn-basket {
+	@extend .baseBtn;
+	position: relative;
+	padding: 0;
+	width: getEm(30, 14);
+	height: getEm(28, 14);
+	fill: var(--color-secondary);
+
+	strong {
+		position: absolute;
+		right: -#{getEm(10, 14)};
+		top: -#{getEm(8, 14)};
+		font-weight: 400;
+		color: var(--color-secondary);
+	}
+
+	svg {
+		max-height: 100%;
+	}
+}
+
+.escort-btn {
+	--h: 60px;
+	--fz: 14px;
+	position: fixed;
+	left: 30px;
+	top: 130px;
+	z-index: 10;
+	padding: 0 getEm(32, 14);
+
+	@include desctop-mid {
+		--h: 50px;
+		--fz: 12px;
+		bottom: 40px;
+		top: auto;
+	}
+	@include mobile {
+		--h: 31px;
+		--fz: 9px;
+		bottom: 45px;
+	}
+
+	@include tel {
+		left: 20px;
+	}
+}
+
+/*v-up*/
+.v-up {
+	cursor: pointer;
+	position: fixed;
+	right: 30px;
+	bottom: 100px;
+	z-index: 250;
+	width: 60px;
+	height: 60px;
+	background-color: var(--color-secondary);
+	border-radius: 50%;
+	opacity: 0;
+	pointer-events: none;
+	transition: background-color $duration, opacity $duration;
+
+	&.active {
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	&:hover {
+		background-color: var(--color-primary);
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: 60%;
+		left: 40%;
+		width: 35%;
+		height: 7%;
+		background-color: #fff;
+		transition: background-color $duration;
+	}
+
+	&::before {
+		border-radius: 0px 3px 3px 0;
+		transform-origin: right top;
+		transform: rotate(45deg);
+	}
+
+	&::after {
+		margin-left: -15.4%;
+		border-radius: 3px 0 0 3px;
+		transform-origin: left top;
+		transform: rotate(-45deg);
+	}
+
+	@include mobile {
+		bottom: 120px;
+		right: 20px;
+		width: 50px;
+		height: 50px;
+	}
+}
